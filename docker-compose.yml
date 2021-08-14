@@ -54,7 +54,7 @@ services:
     volumes:
       - certbot-etc:/etc/letsencrypt
       - jobtest:/var/www/html
-    command: certonly --webroot --webroot-path=/var/www/html --email $EMAIL --agree-tos --no-eff-email --staging -d jobtest.luxnet.ua -d www.jobtest.luxnet.ua
+    command: certonly --webroot --webroot-path=/var/www/html --email $EMAIL --agree-tos --no-eff-email --staging -d jobtest.luxnet.ua
 
 volumes:
   certbot-etc:
