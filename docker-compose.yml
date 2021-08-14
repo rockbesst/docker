@@ -57,9 +57,9 @@ services:
     command: certonly --webroot --webroot-path=/var/www/html --email $EMAIL --agree-tos --no-eff-email --staging -d jobtest.luxnet.ua -d www.jobtest.luxnet.ua
 
 volumes:
-  certbot-etc:
-  wordpress:
-  dbdata:
+  certbot-etc: {}
+  wordpress: {}
+  dbdata: {}
 
 networks:
   app-network:
