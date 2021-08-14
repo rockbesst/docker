@@ -10,6 +10,7 @@ services:
       - MYSQL_DATABASE=jobtest
     volumes:
       - dbdata:/var/lib/mysql
+      - ./logs:/var/logs
     command: '--default-authentication-plugin=mysql_native_password'
     networks:
       - app-network
@@ -28,6 +29,7 @@ services:
       - WORDPRESS_DB_NAME=jobtest
     volumes:
       - jobtest:/var/www/html
+      - ./logs:/var/logs
     networks:
       - app-network
   
@@ -43,6 +45,7 @@ services:
       - jobtest:/var/www/html
       - ./nginx-conf:/etc/nginx/conf.d
       - certbot-etc:/etc/letsencrypt
+      - ./logs:/var/logs
     networks:
       - app-network
   
@@ -60,6 +63,7 @@ volumes:
   certbot-etc:
   jobtest:
   dbdata:
+  ./logs:
 
 networks:
   app-network:
